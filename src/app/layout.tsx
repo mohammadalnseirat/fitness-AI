@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,10 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ConvexClerkProvider>
       <html lang="en">
         <body className={`${roboto.className} antialiased`}>{children}</body>
       </html>
-    </ClerkProvider>
+    </ConvexClerkProvider>
   );
 }
